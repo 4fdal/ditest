@@ -1,0 +1,33 @@
+<div id="angka">  </div>
+<button id="spin"> SPIN</button>
+
+
+<div id="out">  </div>
+
+
+<script>
+    var angka = document.getElementById('angka')
+    var spin = document.getElementById('spin')
+    var out = document.getElementById('out')
+
+    spin.addEventListener('click', e => {
+        var varspin = []
+        var winer;
+        for(i in [0,1,2]){
+            var rand = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+            varspin[i] = rand
+            if(i == 0) {
+                winer = true
+            } else {
+                winer = winer && varspin[i-1] == rand
+            }
+        }
+        angka.innerHTML = JSON.stringify(varspin)
+        if(winer){
+            out.innerHTML = 'KAMU MENANG'
+        } else {
+            out.innerHTML = 'KAMU KALAH'
+        }
+    })
+
+</script>

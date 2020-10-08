@@ -1,0 +1,26 @@
+<input type="text" id="uang">
+
+<script>
+    var uiUang = document.getElementById('uang')
+    
+    uiUang.addEventListener('keyup', e => {
+        
+        var dataUang = [] ;
+        var bagi = [50000, 20000, 2000, 200, 100] ;
+        var uang = parseInt(uiUang.value)
+        var count = 0 ;
+        for(i in bagi){
+            cUang = uang % bagi[i]
+            if(cUang != 0){
+                sUang = uang - cUang
+                for(n=1; n<sUang/bagi[i]; i++){
+                    dataUang[count++] = bagi[i] 
+                }
+            } 
+            uang = cUang
+        }
+
+        console.log(dataUang.sort((a, b) => b - a))
+
+    })
+</script>

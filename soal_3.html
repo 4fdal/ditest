@@ -1,0 +1,19 @@
+<input type="text" id="kata">
+
+<div id="stat"></div>
+
+<script>
+    var kata = document.getElementById('kata')
+    var stat = document.getElementById('stat')
+
+    kata.addEventListener('keyup', e => {
+        var input = kata.value
+        var kataLain = input.split("").reverse().join("")
+    
+        if(input != kataLain) stat.innerHTML = "output salah"
+        else stat.innerHTML = "output benar"
+
+    })
+
+
+</script>

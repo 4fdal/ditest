@@ -1,0 +1,25 @@
+<div id="out"></div>
+
+<script>
+    var data = [23, 45, 67, 90, 23, 1, 6, 90, 12, 43, 90, 67]
+    var newData = [];    
+
+    var count = 0 ;
+    for(i in data) {
+        if(i == 0){
+            newData[count] = data[i]
+            count++
+        } else {
+            if(newData.indexOf(data[i]) == -1){
+                newData[count] = data[i]
+                count++
+            }
+        }
+    }
+
+    document.getElementById('out').innerHTML = `
+        ${JSON.stringify(data)} <br/>
+        ${JSON.stringify(newData)}
+    `
+
+</script>

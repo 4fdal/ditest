@@ -1,0 +1,29 @@
+<div id="out"></div>
+
+<script>
+
+    var rudi = {
+        'sejarah': 8,
+        'matematika': 7,
+        'sosiologi': 6,
+        'kewarganegaran': 9,
+    }
+
+    var ani = {
+        'sejarah': 5,
+        'matematika': 8,
+        'sosiologi': 9,
+        'kewarganegaran': 6,
+    }
+
+    var nRudi = 0 ;
+    var nAni = 0 ;
+
+    for(i in rudi){
+        if (ani[i] > rudi[i]) nRudi++
+        else nAni++
+    }
+
+    document.getElementById('out').innerHTML = JSON.stringify({ rudi : nRudi, ani : nAni })
+
+</script>
